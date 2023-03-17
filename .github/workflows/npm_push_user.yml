@@ -3,8 +3,8 @@ name: NPM Push User
 on:
   push:
     paths:
-      - 'npm/parsley/*'
-      - '.github/workflows/npm_push.yml'
+      - 'npm/parsley_user/*'
+      - '.github/workflows/npm_push_user.yml'
 
 jobs:
   build:
