@@ -1,4 +1,4 @@
-name: NPM Push
+name: NPM Push User
 
 on:
   push:
