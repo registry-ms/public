@@ -23,5 +23,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          cd npm/parsley
+          cd npm/parsley_user
           npm publish
