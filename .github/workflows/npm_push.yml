@@ -1,0 +1,27 @@
+name: NPM Push
+
+on:
+  push:
+    paths:
+      - 'npm/parsley/*'
+      - '.github/workflows/npm_push.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: '@registry-ms'
+
+      - name: Publish to GitHub Packages
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          cd npm/parsley
+          npm publish
